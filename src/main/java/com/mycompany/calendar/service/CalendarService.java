@@ -2,11 +2,11 @@ package com.mycompany.calendar.service;
 
 import java.util.List;
 
-import org.springframework.transaction.annotation.Transactional;
+//import org.springframework.transaction.annotation.Transactional;
 
-import com.mycompany.myapp.domain.CalendarUser;
-import com.mycompany.myapp.domain.Event;
-import com.mycompany.myapp.domain.EventAttendee;
+import com.mycompany.calendar.domain.CalendarUser;
+import com.mycompany.calendar.domain.Event;
+import com.mycompany.calendar.domain.EventAttendee;
 
 public interface CalendarService {
 	/* CalendarUser */

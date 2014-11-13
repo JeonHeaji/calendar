@@ -17,7 +17,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import com.mycompany.myapp.domain.CalendarUser;
+import com.mycompany.calendar.domain.CalendarUser;
 
 @Repository
 public class JdbcCalendarUserDao implements CalendarUserDao {

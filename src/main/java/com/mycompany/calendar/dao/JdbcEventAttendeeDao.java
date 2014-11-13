@@ -17,7 +17,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import com.mycompany.myapp.domain.EventAttendee;
+import com.mycompany.calendar.domain.EventAttendee;
 
 @Repository
 public class JdbcEventAttendeeDao implements EventAttendeeDao {

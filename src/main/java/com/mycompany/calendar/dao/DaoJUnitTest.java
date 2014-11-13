@@ -19,7 +19,7 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations="../applicationContext.xml")
+@ContextConfiguration(locations="/root-context.xml")
 
 public class DaoJUnitTest {
 	@Autowired
@@ -88,35 +88,32 @@ public class DaoJUnitTest {
 			eventAttendees[i].setAttendee(calendarUsers[i]);
 			eventAttendees[i].setId(eventAttendeeDao.createEventAttendee(eventAttendees[i]));
 		}
+		
+		
 	}
 	
 	@Test
 	public void getAllUsers() {
-		// ?“±ë¡ëœ ëª¨ë“  Users ê°œìˆ˜ê°? numInitialNumUsers ?¸ì§? ?™•?¸?•˜?Š” ?…Œ?Š¤?Š¸ ì½”ë“œ  
 		assertThat(this.calendarUserDao.findAllusers().size(), is(numInitialNumUsers));
 	}
 	
 	@Test
 	public void getAllEvents() {
-		// ?“±ë¡ëœ ëª¨ë“  Events ê°œìˆ˜ê°? numInitialNumEvents ?¸ì§? ?™•?¸?•˜?Š” ?…Œ?Š¤?Š¸ ì½”ë“œ 
 		assertThat(this.eventDao.findAllEvents().size(), is(numInitialNumEvents));
 	}
 
 	@Test
 	public void getOneUserByEmail() {
-		// email?´ 'user0@example.com'?¸ CalendarUserê°? ì¡´ì¬?•˜?Š” ê²ƒì„ ?…Œ?Š¤?¬ 
 		assertTrue(this.calendarUserDao.findUserByEmail("user0@example.com") != null);
 	}
 	
 	@Test
 	public void getTwoUserByEmail() {
-		// partialEmail?´ 'user'?¸ CalendarUserê°? numInitialNumUsersëª…ì„?„ ?™•?¸?•˜?Š” ?…Œ?Š¤?¬ ì½”ë“œ ?‘?„±
 		assertThat(this.calendarUserDao.findUsersByEmail("user").size(), is(numInitialNumUsers));
 	}
 	
 	@Test
 	public void getAllEventAttendees() {
-		// ê°? ?´ë²¤íŠ¸ ë³„ë¡œ ?“±ë¡ëœ Attendee ê°œìˆ˜ê°? 3?¸ì§? ?™•?¸?•˜?Š” ?…Œ?Š¤?Š¸ ì½”ë“œ
 		for(int i=0; i<numInitialNumEvents; i++) {
 			assertThat(this.eventAttendeeDao.findEventAttendeeByEventId(events[i].getId()).size(), is(3));
 		}
