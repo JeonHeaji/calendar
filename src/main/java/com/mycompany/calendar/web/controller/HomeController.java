@@ -19,6 +19,7 @@ import com.mycompany.calendar.service.CalendarService;
  */
 @Controller
 public class HomeController {
+	
 	@Autowired
 	private CalendarService calendarService;	
 	
@@ -81,6 +82,9 @@ public class HomeController {
 		}
 		
 		//TODO model에 calendarUsers, events, eventAttentees 배열 객체 추가 
+		model.addAttribute("calendarUsers", calendarUsers);
+		model.addAttribute("events", events);
+		model.addAttribute("eventAttentees", eventAttentees);
 		
 		return "home";
 	}

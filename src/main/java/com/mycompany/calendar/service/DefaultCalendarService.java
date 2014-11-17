@@ -62,8 +62,6 @@ public class DefaultCalendarService implements CalendarService {
 		userDao.deleteAll();
 	}
 
-
-
 	/* Event */
 	@Override
 	public Event getEvent(int eventId) {
