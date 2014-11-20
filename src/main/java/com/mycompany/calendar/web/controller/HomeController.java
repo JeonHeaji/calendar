@@ -2,6 +2,7 @@ package com.mycompany.calendar.web.controller;
 
 import java.util.Locale;
 import java.util.Random;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -82,9 +83,13 @@ public class HomeController {
 		}
 		
 		//TODO model에 calendarUsers, events, eventAttentees 배열 객체 추가 
-		model.addAttribute("calendarUsers", calendarUsers);
-		model.addAttribute("events", events);
-		model.addAttribute("eventAttentees", eventAttentees);
+		List<CalendarUser> calendarUsersToDisplay = calendarService.getAllUsers();
+		List<Event> eventsToDisplay = calendarService.getAllEvents();
+		List<EventAttendee> eventAttenteesToDisplay = calendarService.getAllEventAttendees();
+		
+		model.addAttribute("calendarUsersToDisplay", calendarUsersToDisplay);
+		model.addAttribute("eventsToDisplay", eventsToDisplay);
+		model.addAttribute("eventAttenteesToDisplay", eventAttenteesToDisplay);
 		
 		return "home";
 	}

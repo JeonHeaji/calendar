@@ -67,6 +67,12 @@ public class JdbcEventAttendeeDao implements EventAttendeeDao {
 	}
 
 	@Override
+	public List<EventAttendee> findAllEventAttendees() {
+		String sql_query = "select * from events_attendees";
+		return this.jdbcTemplate.query(sql_query, rowMapper);
+	}
+	
+	@Override
 	public int createEventAttendee(final EventAttendee eventAttendee) {
 		// TODO Assignment 3
 		KeyHolder keyHolder = new GeneratedKeyHolder();

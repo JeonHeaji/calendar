@@ -10,8 +10,12 @@ public interface EventAttendeeDao {
     public List<EventAttendee> findEventAttendeeByAttendeeId(int attendeeId);
 
     public int createEventAttendee(EventAttendee eventAttendee);
+    
+    public List<EventAttendee> findAllEventAttendees();
 
     public void deleteEventAttendee(int id);
     
     public void deleteAll();
+    
+    
 }

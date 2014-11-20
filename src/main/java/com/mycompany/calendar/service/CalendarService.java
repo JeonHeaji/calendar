@@ -15,6 +15,8 @@ public interface CalendarService {
     public CalendarUser getUserByEmail(String email);
 
     public List<CalendarUser> getUsersByEmail(String partialEmail);
+    
+    public List<CalendarUser> getAllUsers();
 
     public int createUser(CalendarUser user);
     
@@ -37,6 +39,8 @@ public interface CalendarService {
     public List<EventAttendee> getEventAttendeeByAttendeeId(int attendeeId);
 
     public int createEventAttendee(EventAttendee eventAttendee);
+    
+    public List<EventAttendee> getAllEventAttendees(); 
 
     public void deleteEventAttendee(int id);
     
